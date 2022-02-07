@@ -1,0 +1,26 @@
+.navigation {
+	position: fixed;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	width: 100%;
+	top: 0px;
+	margin: 0 auto;
+	padding: 50px;
+	background-color: #2c2d33;
+	z-index: 2;
+}
+.navigation > nav {
+	margin-left: 50px;
+}
+.nav-list {
+	list-style: none;
+	display: flex;
+	flex-direction: row;
+	gap: 20px;
+}
+.text-link {
+	text-decoration: none;
+	color: white;
+}

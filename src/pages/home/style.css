@@ -1,0 +1,9 @@
+.content {
+	padding: 20px 0;
+	padding-top: 125px;
+	width: 90%;
+	margin: 0 auto;
+}
+.content::-webkit-scrollbar {
+	width: 0;
+}
