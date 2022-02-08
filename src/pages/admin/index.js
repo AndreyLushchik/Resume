@@ -1,6 +1,6 @@
 import React from "react";
 import AdminList from "./AdminList";
-import AdminMenu from "./AdminMenu";
+import NewProduct from "./NewProduct";
 
 const AdminPanel = () => {
 	return (
@@ -10,7 +10,11 @@ const AdminPanel = () => {
 			<br />
 
 			<div className="site-content">
-				{/* <AdminMenu /> */}
+				<div>
+					Новый продукт
+					<NewProduct />
+				</div>
+
 				<AdminList />
 			</div>
 		</div>

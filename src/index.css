@@ -3,8 +3,7 @@
 	margin: 0;
 	box-sizing: border-box;
 	color: #0f223b;
-	font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-		"Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+	font-family: "Poiret One", cursive;
 }
 html,
 body {
@@ -15,7 +14,6 @@ body {
 		sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	background: rgb(217, 237, 255);
 }
 body::-webkit-scrollbar {
 	width: 10px;
@@ -47,5 +45,4 @@ code {
 	flex-direction: column;
 	width: 100%;
 	min-height: 100%;
-	background: rgb(217, 237, 255);
 }

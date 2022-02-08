@@ -1,17 +1,28 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getFilteredProducts } from "../../store/slices/mainPageSlice";
-import { getProducts, selectProducts } from "../../store/slices/productsSlice";
+import { getProducts } from "../../store/slices/productsSlice";
 import "./style.css";
 
 const Products = () => {
-	//const [total, setTotal] = useState(0);
+	const [total, setTotal] = useState({});
 	const dispatch = useDispatch();
 	const productsList = useSelector(getFilteredProducts);
-	// const onChangeProductCount = (count) => {
-	// 	setTotal(total + count);
-	// };
 
+	function returnObj(e) {
+		if (e.target.value === "plus") {
+			setTotal((total) => ({
+				...total,
+				[e.target.name]: total[e.target.name] ? (total[e.target.name] += 1) : 1,
+			}));
+			console.log("hi");
+		} else {
+			setTotal((total) => ({
+				[e.target.name]: total[e.target.name] ? (total[e.target.name] -= 1) : 1,
+				...total,
+			}));
+		}
+	}
 	useEffect(() => {
 		if (!productsList.length) {
 			dispatch(getProducts);
@@ -34,18 +45,30 @@ const Products = () => {
 						<span className="product-fragrance">{item.fragrance}</span>
 						<p className="product-cost">{item.cost}.00 руб/шт</p>
 						<div className="products-counter">
-							<button className="count-btn">-</button>
+							<button
+								className="count-btn"
+								name={item.id}
+								value="minus"
+								onClick={returnObj}
+							>
+								-
+							</button>
 							<input
 								type="number"
-								defaultValue={"1"}
+								value={total[item.id] || 0}
 								className="count-btn"
 								title="Кол-во"
 								min={1}
-								size="10"
-								inputMode="numeric"
+								readOnly
 							/>
-
-							<button className="count-btn">+</button>
+							<button
+								className="count-btn"
+								name={item.id}
+								value="plus"
+								onClick={returnObj}
+							>
+								+
+							</button>
 							<button className="bascket-btn">🛒</button>
 						</div>
 					</div>

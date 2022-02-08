@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Admin from "./pages/admin";
 import Home from "./pages/home";
 import Navbar from "./components/Navbar";
+import CartPage from "./pages/cart";
 //import { useDispatch, useSelector } from "react-redux";
 
 export default function Navigator() {
@@ -19,10 +20,7 @@ export default function Navigator() {
 					path="/about"
 					element={<div className="content">About</div>}
 				></Route>
-				<Route
-					path="/contact"
-					element={<div className="content">Contact</div>}
-				></Route>
+				<Route path="/Cart" element={<CartPage />}></Route>
 				<Route path="/admin" element={<Admin />}></Route>
 			</Routes>
 		</Router>

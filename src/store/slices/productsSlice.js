@@ -73,12 +73,3 @@ export const createProduct = (data) => {
 	};
 };
 export default productsSlice.reducer;
-
-// cartState = {
-// 	cart: [
-// 		{
-// 			productId: 5,
-// 			count: 8,
-// 		},
-// 	],
-// };
