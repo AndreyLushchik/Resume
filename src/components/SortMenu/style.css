@@ -1,0 +1,23 @@
+.menu {
+	min-width: 180px;
+}
+
+.input-area {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.input-area > label {
+	background-color: #ffffff7a;
+	border: 2px solid #000000;
+	padding: 10px 5px;
+}
+
+#female,
+#male,
+#unisex {
+	margin-right: 8px;
+	transform: scale(1.3);
+	z-index: 1;
+}

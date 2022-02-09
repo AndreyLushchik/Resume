@@ -1,0 +1,48 @@
+.navigation {
+	position: fixed;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	width: 100%;
+	top: 0px;
+	margin: 0 auto;
+	height: 100px;
+	background-color: rgb(255, 255, 255);
+	z-index: 2;
+}
+.navigation > nav {
+	margin-left: 50px;
+}
+.nav-list {
+	list-style: none;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 20px;
+}
+.text-link {
+	text-decoration: none;
+	color: black;
+	transition: 0.3s ease-in-out;
+}
+.text-link:hover {
+	color: #f3358e;
+	border-bottom: solid #f3358e 3px;
+}
+.logo {
+	border-radius: 50%;
+}
+.logo:hover {
+	border-bottom: solid white 0px;
+}
+.cart-link {
+	display: flex;
+	flex-direction: row;
+	gap: 5px;
+}
+.cart-price {
+	background-color: #00000028;
+	border-radius: 22%;
+}
