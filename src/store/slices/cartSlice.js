@@ -8,24 +8,25 @@ export const cartSlice = createSlice({
 	name: "cartCounter",
 	initialState,
 	reducers: {
-		increment: (state) => {
-			state.value += 1;
+		setCartObj: (state, action) => {
+			state.cartState = action.payload;
 		},
-		decrement: (state) => {
-			state.value -= 1;
+		increment: (state, action) => {
+			const key = action.payload;
+			state.cartState[key] += 1;
+		},
+		decrement: (state, action) => {
+			state.cartState[action.payload]
+				? (state.cartState[action.payload] -= 1)
+				: delete state.cartState[action.payload];
 		},
 	},
 });
 
-export const { increment, decrement } = cartSlice.actions;
+export const { setCartObj, increment, decrement } = cartSlice.actions;
+
+//selector
+
+export const selectCart = (state) => state.cart.cartState;
 
 export default cartSlice.reducer;
-
-// cartState = {
-// 	cart: [
-// 		{
-// 			productId: 5,
-// 			count: 8,
-// 		},
-// 	],
-// };

@@ -7,7 +7,13 @@ const Navbar = () => {
 		<div className="navigation">
 			<div>
 				<Link to="/" className="text-link">
-					Logo
+					<img
+						src="/images/logo.png"
+						alt=""
+						className="logo"
+						width="25px"
+						height="25px"
+					/>
 				</Link>
 			</div>
 			<nav>

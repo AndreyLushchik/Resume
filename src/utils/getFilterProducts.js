@@ -4,7 +4,6 @@ export default function getFilterProducts(data, param = {}, desiredObj) {
 			return Object.values(param).includes(item[desiredObj]);
 		});
 	} else {
-		console.log("hi");
 		return data;
 	}
 }
