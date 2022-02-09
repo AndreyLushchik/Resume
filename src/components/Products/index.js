@@ -4,7 +4,6 @@ import { getFilteredProducts } from "../../store/slices/mainPageSlice";
 import { getProducts } from "../../store/slices/productsSlice";
 import { setCartObj } from "../../store/slices/cartSlice";
 import "./style.css";
-import OpenProduct from "../OpenProduct";
 import { Link } from "react-router-dom";
 
 const Products = () => {
@@ -42,9 +41,9 @@ const Products = () => {
 		<div className="primary">
 			{productsList.map((item) => {
 				return (
-					<Link key={item.id} to={`/${item.id}`}>
-						<div className="product" style={{ cursor: "pointer" }}>
-							<h5 className="name-product">{item.name}</h5>
+					<div className="product" key={item.id}>
+						<h5 className="name-product">{item.name}</h5>
+						<Link to={`/${item.id}`} style={{ cursor: "pointer" }}>
 							<img
 								src={item.img}
 								alt="aroma"
@@ -52,41 +51,41 @@ const Products = () => {
 								width="250px"
 								height="250px"
 							/>
-							<span className="product-fragrance">{item.fragrance}</span>
-							<p className="product-cost">{item.cost}.00 руб/шт</p>
-							<div className="products-counter">
-								<button
-									className="count-btn"
-									name={item.id}
-									value="minus"
-									onClick={updateObj}
-								>
-									-
-								</button>
-								<input
-									type="number"
-									value={total[item.id] || 0}
-									className="count-btn"
-									title="Кол-во"
-									readOnly
-								/>
-								<button
-									className="count-btn"
-									name={item.id}
-									value="plus"
-									onClick={updateObj}
-								>
-									+
-								</button>
-								<button
-									className="bascket-btn"
-									onClick={() => dispatch(setCartObj(total))}
-								>
-									🛒
-								</button>
-							</div>
+						</Link>
+						<span className="product-fragrance">{item.fragrance}</span>
+						<p className="product-cost">{item.cost}.00 руб/шт</p>
+						<div className="products-counter">
+							<button
+								className="count-btn"
+								name={item.id}
+								value="minus"
+								onClick={updateObj}
+							>
+								-
+							</button>
+							<input
+								type="number"
+								value={total[item.id] || 0}
+								className="count-btn"
+								title="Кол-во"
+								readOnly
+							/>
+							<button
+								className="count-btn"
+								name={item.id}
+								value="plus"
+								onClick={updateObj}
+							>
+								+
+							</button>
+							<button
+								className="bascket-btn"
+								onClick={() => dispatch(setCartObj(total))}
+							>
+								🛒
+							</button>
 						</div>
-					</Link>
+					</div>
 				);
 			})}
 		</div>

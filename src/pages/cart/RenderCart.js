@@ -38,7 +38,7 @@ const RenderCart = () => {
 										value="minus"
 										onClick={() => dispatch(decrement(item.id))}
 									>
-										-
+										{cartList[item.id] ? "-" : "🗑"}
 									</button>
 									<input
 										type="number"

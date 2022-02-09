@@ -7,6 +7,7 @@
 	flex-direction: column;
 	gap: 20px;
 }
+
 .input-area > label {
 	background-color: #ffffff7a;
 	border: 2px solid #000000;
